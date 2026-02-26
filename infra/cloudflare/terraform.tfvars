@@ -1,4 +1,5 @@
 zone_id             = "0d3d5e80bfa622272ca3fc4463f54ce1"
+account_id          = "e33b8629d004141d872e6353f16a5917"
 github_pages_target = "supervizio.github.io"
 domain              = "superviz.io"
 
