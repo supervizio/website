@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Superviz.io — Real-Time Infrastructure Monitoring</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAEg0lEQVRYhbVWW4hVZRT+/n2OziUTL6FMXmvGvIwOWQqmZc1LESJZqCBGSQ+SEIolQ09CZkEE9dJb+dBLpWIklmgG2VSjiFZa2mVy1JxRU2JivMw5/7p8PZxzxuOgnnMa3bBh7X+v/a3v/9Za/9rAAK6TZ9nc0cnFA8EIA/n4RJd3u2NY1sLd0yaGs/8HI6nE+dw/XNt5ga8Unt25zR37pk7AOQD4uZ1LD/9h75Ise2MVEXDHKjqWFz1XOVETQiAAOPmseVhx7BgGlYuZroSAOba7++U+AggPuKOhvZ1VkyaFrDPscHpPY2MSbwsBd97jHgZ3dHGhqM91x2QnUhn4ez/9zp2mPssZxleCWVauTnRzWDqLJeZ83Ryj3QFzwAzos73P7jHha+bJx/NnlS7MkgTOXOAH5ljuxup+gWiOf80BN1Sbo6ZASiKhQpPIPdVIP93cHDI3wi9ZhDRccWe1Eb85+bYhPGXO92nhwRkNyYj770tGCMI4EtuA8LgpN5jiB1WmVJm+WXCgjBoIjg1Okh7qGsalWgDglw6OcqABwI8AkHI0RA9H5jaFPQD27G6VoSY4HUVfKolfygEA2js5ls5fMwzjU5dwWQfjOXd/xJh8bgaAPkcFPbycvCOC3l5Kp2XD4oVPDvquFHZZXaCCdAjoSjkPehXG0pHQg9D5MB0wCyNFWKvB1gv8tCqqonh3Odgla+DPTj6fJGyjcS8N0STM0J5Q68C+2Y1J/ZwZSb0JP5WYNEiUelV0mHK7O7d+tLX3zQETCESbOy5NuTdZ5URXSGNIUoP5bhi5/whXfnvIVqphplGnRYS0GYcfPjD4BVUeMOGhkvilHADgaIe3meFvdzxkjtGFVlQhRFhoO0gkRNijWXwl6jO7z9dMXb06ZAekAADAwwYCY90xygvngAKav/vZQ9XYKMK3SgUvW4HCdfAoxxt5qnDYiHKbZnlchC0FBUx83rIltW3lYlY0DWc1hr/cQVXClFDhKREezdtQJTL0jkowKxpGO9tZZRc9FzxHoonG4QVCpgR6U9WVYFakwPBLqFNFUMnl3RWzRcKCa2ogcMxtIyCKMYWdqhIq2GRq64oVkGi3k4A36VX5Yeq5UZzPf57U9EowK/shEXvUFH0KRAM0Ih8cMAHc8FglmGUrsOMga9XCApWrve/CJndvLialynkbN14pOw1lE0hflKWqHFLUglDFbBMsKE6LKpMQ4opbSmDLFqbU8GpxAeZs2xSV6/qvq3BtS8uFO28ZgTvu0jWunNxvp7B83lWBQmvm23FkKqTW3xICu7/OTjfhG4W8W/H5b7l/wGsUkD775TVrzs8fEIFdrayLGrarsrr4uO1rO2GTqTf3Vybvk3gMn7y44uzEm8W44TD64ntOYEZ2aeSU/JiFxuuO35u8AzTyeMzwiQ83jz5etgK7W3URMnLAhFOuu7t+o9iKWrM4Rflv6p3cv2zRmUVlKfDlN5ykrs9oFlB1SARUDFEBiY7CejYLaHSoApJf0whkJbemeV9Rg2aBGB1qyebPdtWdLI73H5DRKGPE+nCVAAAAAElFTkSuQmCC" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <meta
+      name="description"
+      content="Monitor your entire infrastructure in real time. Get instant alerts, deep visibility, and actionable insights. Trusted by IT teams worldwide."
+    />
+    <meta
+      property="og:title"
+      content="Superviz.io — Real-Time Infrastructure Monitoring"
+    />
+    <meta
+      property="og:description"
+      content="Monitor your entire infrastructure in real time. Instant alerts, deep visibility, actionable insights."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://superviz.io" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://superviz.io" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a href="index.html" class="logo"
+          ><img src="images/logo.svg" alt="Superviz.io" class="logo-img" /><span class="logo-text">Superviz<span class="io">.io</span></span></a
+        >
+        <nav class="nav">
+          <a href="features.html">Features</a>
+          <a href="enterprise.html">Enterprise</a>
+          <a href="customers.html">Customers</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="about.html">About</a>
+        </nav>
+        <div class="header-actions">
+          <a href="pricing.html" class="btn btn-primary">Start Free Trial</a>
+        </div>
+        <button class="mobile-toggle" aria-label="Menu">&#9776;</button>
+      </div>
+    </header>
+    <div class="mobile-menu">
+      <a href="features.html">Features</a
+      ><a href="enterprise.html">Enterprise</a
+      ><a href="customers.html">Customers</a> <a href="pricing.html">Pricing</a
+      ><a href="about.html">About</a><a href="contact.html">Contact</a>
+      <a href="pricing.html" class="btn btn-primary btn-lg">Start Free Trial</a>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <span class="badge">Now in General Availability</span>
+        <h1 style="margin-top: 1.5rem">
+          Monitor your infrastructure.<br /><span class="text-gradient"
+            >Fix issues before they happen.</span
+          >
+        </h1>
+        <p class="subtitle subtitle-wide">
+          Superviz.io gives your team real-time visibility into servers,
+          containers, networks, and applications. Detect anomalies in seconds,
+          not hours.
+        </p>
+        <div class="hero-cta">
+          <a href="pricing.html" class="btn btn-primary btn-lg"
+            >Start Free Trial &rarr;</a
+          >
+          <a href="features.html" class="btn btn-secondary btn-lg"
+            >See Features</a
+          >
+        </div>
+        <div class="hero-metrics">
+          <div class="metric">
+            <div class="metric-value">99.9%</div>
+            <div class="metric-label">Uptime SLA</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">&lt;30s</div>
+            <div class="metric-label">Alert Latency</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">500+</div>
+            <div class="metric-label">Integrations</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">10K+</div>
+            <div class="metric-label">Servers Monitored</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="logos-section">
+      <div class="container text-center">
+        <p
+          style="
+            color: var(--text-muted);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-8);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+          "
+        >
+          Trusted by leading engineering teams
+        </p>
+        <div class="logos-grid">
+          <span>Airbus</span><span>Thales</span><span>OVHcloud</span
+          ><span>Scaleway</span> <span>BlaBlaCar</span><span>Doctolib</span
+          ><span>Datadog</span><span>Qonto</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-12)">
+          <span class="badge">Core Capabilities</span>
+          <h2 style="margin-top: var(--space-4)">
+            Everything you need to<br /><span class="text-gradient"
+              >keep systems running</span
+            >
+          </h2>
+          <p class="subtitle subtitle-wide" style="margin-top: var(--space-4)">
+            From real-time dashboards to intelligent alerting, Superviz.io covers
+            your entire monitoring stack.
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">&#9889;</div>
+            <h3>Real-Time Monitoring</h3>
+            <p>
+              Sub-second metric collection across servers, containers, and cloud
+              instances. See what's happening right now, not five minutes ago.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">&#128276;</div>
+            <h3>Intelligent Alerts</h3>
+            <p>
+              ML-powered anomaly detection reduces alert noise by 90%. Get
+              notified about real issues, not false positives.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">&#128200;</div>
+            <h3>Custom Dashboards</h3>
+            <p>
+              Build dashboards that tell a story. Drag-and-drop widgets,
+              real-time charts, and shareable views for every team.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">&#128268;</div>
+            <h3>500+ Integrations</h3>
+            <p>
+              Connect to AWS, GCP, Azure, Kubernetes, Docker, Prometheus, and
+              hundreds more. One agent, full visibility.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">&#128202;</div>
+            <h3>Automated Reports</h3>
+            <p>
+              Weekly and monthly reports generated automatically. Uptime stats,
+              incident summaries, capacity forecasts.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">&#128272;</div>
+            <h3>API &amp; Extensibility</h3>
+            <p>
+              Full REST API for custom integrations. Webhooks, Terraform
+              provider, and CLI tools for your pipeline.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-secondary)">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-12)">
+          <span class="badge">Enterprise Security</span>
+          <h2 style="margin-top: var(--space-4)">
+            Built for teams that<br /><span class="text-gradient"
+              >take security seriously</span
+            >
+          </h2>
+        </div>
+        <div class="security-grid">
+          <div class="security-card">
+            <div class="security-icon">&#128737;</div>
+            <h3>SOC 2 Type II</h3>
+            <p>
+              Annual independent audits verify our security controls. Your data
+              is protected by industry-leading standards.
+            </p>
+          </div>
+          <div class="security-card">
+            <div class="security-icon">&#128274;</div>
+            <h3>End-to-End Encryption</h3>
+            <p>
+              TLS 1.3 in transit, AES-256 at rest. Zero plaintext storage of
+              sensitive metrics.
+            </p>
+          </div>
+          <div class="security-card">
+            <div class="security-icon">&#127919;</div>
+            <h3>GDPR &amp; HIPAA Ready</h3>
+            <p>
+              Data residency options in EU and US. Full GDPR compliance with DPA
+              available.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-12)">
+          <span class="badge">Customer Stories</span>
+          <h2 style="margin-top: var(--space-4)">
+            Teams ship faster with <span class="text-gradient">Superviz.io</span>
+          </h2>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              Superviz.io cut our incident response time by 60%. The anomaly
+              detection catches issues our old monitoring completely missed.
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">ML</div>
+              <div>
+                <div class="testimonial-name">Marc Laurent</div>
+                <div class="testimonial-role">VP Engineering, CloudScale</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              We replaced three monitoring tools with Superviz.io. One dashboard,
+              one agent, complete visibility. The ROI was immediate.
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">SD</div>
+              <div>
+                <div class="testimonial-name">Sarah Dubois</div>
+                <div class="testimonial-role">SRE Lead, FinSecure</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              The Kubernetes monitoring alone is worth it. Auto-discovers pods,
+              tracks resource usage, alerts on OOM kills before they cascade.
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">TN</div>
+              <div>
+                <div class="testimonial-name">Thomas Nguyen</div>
+                <div class="testimonial-role">Platform Architect, DataFlow</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>
+          Ready to see everything<br /><span class="text-gradient"
+            >in real time?</span
+          >
+        </h2>
+        <p class="subtitle subtitle-wide">
+          Start monitoring in minutes. No credit card required. Free for up to 5
+          hosts.
+        </p>
+        <div class="hero-cta" style="margin-top: var(--space-8)">
+          <a href="pricing.html" class="btn btn-primary btn-lg"
+            >Start Free Trial &rarr;</a
+          >
+          <a href="contact.html" class="btn btn-secondary btn-lg"
+            >Talk to Sales</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo"
+              ><img src="images/logo.svg" alt="Superviz.io" class="logo-img" /><span class="logo-text">Superviz<span class="io">.io</span></span></a
+            >
+            <p>
+              Real-time infrastructure monitoring for modern engineering teams.
+            </p>
+            <div class="footer-social">
+              <a href="https://github.com/superviz-io" aria-label="GitHub">GH</a
+              ><a href="#" aria-label="LinkedIn">LI</a
+              ><a href="#" aria-label="Twitter">X</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="features.html">Features</a
+            ><a href="enterprise.html">Enterprise</a
+            ><a href="pricing.html">Pricing</a
+            ><a href="customers.html">Customers</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About</a><a href="contact.html">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="terms.html">Terms of Service</a
+            ><a href="privacy.html">Privacy Policy</a
+            ><a href="legal.html">Legal Notices</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Superviz.io. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

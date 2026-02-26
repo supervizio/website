@@ -1,0 +1,10 @@
+{
+  "name": "supervizio-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Supervizio commercial website",
+  "scripts": {
+    "dev": "npx browser-sync start --server site --files 'site/**/*' --no-notify --port 3000",
+    "serve": "npx browser-sync start --server site --files 'site/**/*' --no-notify --port 3000"
+  }
+}
