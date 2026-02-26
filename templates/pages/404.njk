@@ -1,0 +1,24 @@
+{% set title = "Page Not Found — Superviz.io" %}
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+    <section
+      class="page-header"
+      style="min-height: 60vh; display: flex; align-items: center"
+    >
+      <div class="container text-center">
+        <h1 style="font-size: 8rem; margin-bottom: var(--space-4)">
+          <span class="text-gradient">404</span>
+        </h1>
+        <h2>Page not found</h2>
+        <p class="subtitle" style="margin-top: var(--space-4)">
+          The page you're looking for doesn't exist or has been moved.
+        </p>
+        <div class="hero-cta" style="margin-top: var(--space-8)">
+          <a href="index.html" class="btn btn-primary btn-lg"
+            >&larr; Back to Home</a
+          >
+        </div>
+      </div>
+    </section>
+{% endblock %}
