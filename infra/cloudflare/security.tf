@@ -1,4 +1,5 @@
 # WAF custom rule: block all traffic except allowed IPs
+# Serves a branded landing page instead of Cloudflare's default block page
 # Requires token permission: Zone > Zone Rulesets > Edit
 # When allowed_ips is empty, this rule is not created (site is public)
 resource "cloudflare_ruleset" "ip_restriction" {
@@ -11,9 +12,16 @@ resource "cloudflare_ruleset" "ip_restriction" {
 
   rules = [
     {
-      action      = "block"
+      action = "block"
+      action_parameters = {
+        response = {
+          status_code  = 403
+          content      = file("${path.module}/block-page.html")
+          content_type = "text/html"
+        }
+      }
       expression  = "not ip.src in {${join(" ", var.allowed_ips)}}"
-      description = "Block all traffic except allowed IPs"
+      description = "Block all traffic except allowed IPs — custom landing page"
       enabled     = true
     }
   ]
