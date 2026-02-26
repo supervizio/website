@@ -1,28 +1,31 @@
-# WAF custom rule: block all traffic except allowed IPs
-# Serves a branded landing page instead of Cloudflare's default block page
-# Requires token permission: Zone > Zone Rulesets > Edit
-# When allowed_ips is empty, this rule is not created (site is public)
-resource "cloudflare_ruleset" "ip_restriction" {
+# IP restriction via Cloudflare Worker (free plan compatible)
+# Serves a branded landing page for non-allowed IPs
+# When allowed_ips is empty, the worker is not created (site is public)
+
+resource "cloudflare_workers_script" "ip_gate" {
+  count = length(var.allowed_ips) > 0 ? 1 : 0
+
+  account_id  = var.account_id
+  script_name = "supervizio-ip-gate"
+  content = templatefile("${path.module}/worker-ip-gate.js", {
+    allowed_ips = jsonencode(var.allowed_ips)
+    block_page  = replace(file("${path.module}/block-page.html"), "`", "\\`")
+  })
+  compatibility_date = "2024-01-01"
+}
+
+resource "cloudflare_workers_route" "ip_gate" {
   count = length(var.allowed_ips) > 0 ? 1 : 0
 
   zone_id = var.zone_id
-  name    = "IP Restriction"
-  kind    = "zone"
-  phase   = "http_request_firewall_custom"
+  pattern = "${var.domain}/*"
+  script  = cloudflare_workers_script.ip_gate[0].script_name
+}
 
-  rules = [
-    {
-      action = "block"
-      action_parameters = {
-        response = {
-          status_code  = 403
-          content      = file("${path.module}/block-page.html")
-          content_type = "text/html"
-        }
-      }
-      expression  = "not ip.src in {${join(" ", var.allowed_ips)}}"
-      description = "Block all traffic except allowed IPs — custom landing page"
-      enabled     = true
-    }
-  ]
+resource "cloudflare_workers_route" "ip_gate_www" {
+  count = length(var.allowed_ips) > 0 ? 1 : 0
+
+  zone_id = var.zone_id
+  pattern = "www.${var.domain}/*"
+  script  = cloudflare_workers_script.ip_gate[0].script_name
 }
