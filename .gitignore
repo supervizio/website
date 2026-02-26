@@ -122,6 +122,16 @@ out/
 
 
 # ============================================
+# Terraform
+# ============================================
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfplan
+# tfvars may contain secrets - commit only non-sensitive ones
+# terraform.tfvars is committed (no secrets, token passed via env var)
+
+# ============================================
 # DevContainer internal files (generated)
 # ============================================
 .devcontainer/docs/
