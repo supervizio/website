@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #0a0a0f;
+  --color-bg-secondary: #12121a;
+  --color-bg-card: #1a1a25;
+  --color-bg-card-hover: #22222f;
+  --color-accent: #6366f1;
+  --color-accent-hover: #818cf8;
+  --color-accent-subtle: rgba(99, 102, 241, 0.1);
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #8494a7;
+  --color-text-accent: #818cf8;
+  --color-accent-logo: #818cf8;
+  --color-accent-gradient-end: #a78bfa;
+  --color-border-default: #1e293b;
+  --color-border-accent: #6366f1;
+  --color-border-accent-subtle: rgba(99, 102, 241, 0.2);
+  --color-border-accent-medium: rgba(99, 102, 241, 0.3);
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.15);
+  --shadow-accent-sm: 0 2px 12px rgba(99, 102, 241, 0.3);
+  --shadow-accent-lg: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* ── Base (inside @layer so utilities can override) ── */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  a {
+    color: var(--color-text-accent);
+    text-decoration: none;
+    transition: color 200ms ease;
+  }
+
+  a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+}
+
+/* ── Text Gradient ── */
+
+@layer components {
+  .text-gradient {
+    background: linear-gradient(135deg, #c7d2fe 0%, #818cf8 50%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* ── Hero Glow ── */
+
+.hero-glow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse,
+    rgba(99, 102, 241, 0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ── Page Header Glow ── */
+
+.page-header-glow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse,
+    rgba(99, 102, 241, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ── CTA Glow ── */
+
+.cta-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(99, 102, 241, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ── Feature Card Top Border ── */
+
+.feature-card-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%);
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.feature-card-border:hover::before {
+  opacity: 1;
+}
+
+/* ── Pricing Features Checkmarks ── */
+
+.pricing-features li::before {
+  content: "\2713";
+  color: var(--color-text-accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── Toggle Switch ── */
+
+.toggle-switch {
+  width: 48px;
+  height: 26px;
+  background: var(--color-border-default);
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+  transition: background 200ms ease;
+  border: none;
+  flex-shrink: 0;
+}
+
+.toggle-switch.active {
+  background: var(--color-accent);
+}
+
+.toggle-switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 200ms ease;
+}
+
+.toggle-switch.active::after {
+  transform: translateX(22px);
+}
+
+/* ── FAQ Accordion ── */
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms ease;
+}
+
+.faq-answer > * {
+  overflow: hidden;
+}
+
+.faq-answer.open {
+  grid-template-rows: 1fr;
+}
+
+/* ── Testimonial Quote ── */
+
+.testimonial-quote::before {
+  content: "\201C";
+  font-size: 1.875rem;
+  color: var(--color-text-accent);
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+/* ── Legal Content ── */
+
+.legal-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border-default);
+}
+
+.legal-content h2:first-child {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+
+.legal-content h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-content p {
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.legal-content ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.legal-content ul li {
+  color: var(--color-text-secondary);
+  padding: 0.25rem 0;
+  list-style: disc;
+  line-height: 1.7;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.25rem !important;
+  }
+
+  h2 {
+    font-size: 1.875rem !important;
+  }
+}
