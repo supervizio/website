@@ -4,7 +4,7 @@
 SHELL := /bin/bash
 PORT ?= 3000
 
-## dev: Build and start Vite dev server (HMR)
+## dev: Start Vite dev server with HMR (live reload on file changes)
 dev:
 	@pid=$$(lsof -ti:$(PORT) 2>/dev/null); \
 	if [ -n "$$pid" ]; then \
@@ -12,8 +12,6 @@ dev:
 		kill -9 $$pid 2>/dev/null; \
 		sleep 1; \
 	fi
-	@echo "[make] Building..."
-	@npm run build
 	@echo "[make] Starting Vite dev server on http://localhost:$(PORT)"
 	@npm run dev
 
