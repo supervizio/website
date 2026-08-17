@@ -90,7 +90,13 @@
   "postCreateCommand": "[ -f /workspace/.devcontainer/hooks/lifecycle/postCreate.sh ] && /workspace/.devcontainer/hooks/lifecycle/postCreate.sh || true",
   "postStartCommand": "[ -f /workspace/.devcontainer/hooks/lifecycle/postStart.sh ] && /workspace/.devcontainer/hooks/lifecycle/postStart.sh || true",
   "postAttachCommand": "[ -f /workspace/.devcontainer/hooks/lifecycle/postAttach.sh ] && /workspace/.devcontainer/hooks/lifecycle/postAttach.sh || true",
-  "forwardPorts": [],
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Vite Dev Server",
+      "onAutoForward": "notify"
+    }
+  },
   "remoteUser": "vscode",
   "shutdownAction": "none"
 }

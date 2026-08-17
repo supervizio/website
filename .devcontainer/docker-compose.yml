@@ -49,6 +49,9 @@ services:
 
     # Host resolution for accessing host Ollama (GPU-accelerated)
     # Needed on Linux; Mac/Windows Docker Desktop provides this automatically
+    # Port forwarding for dev server
+    ports:
+      - "3000:3000"
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
