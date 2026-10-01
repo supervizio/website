@@ -13,8 +13,6 @@ GitHub-specific configurations: workflows, templates, and instructions.
 │   ├── docker-images.yml
 │   ├── release.yml
 │   └── CLAUDE.md
-├── instructions/       # AI instructions
-│   └── codacy.instructions.md
 └── CLAUDE.md           # This file
 ```
 
@@ -24,12 +22,6 @@ GitHub-specific configurations: workflows, templates, and instructions.
 |----------|---------|-------------|
 | docker-images.yml | push/PR | Build devcontainer images |
 | release.yml | push to main | Create release with claude-assets.tar.gz |
-
-## Instructions
-
-| File | Description |
-|------|-------------|
-| codacy.instructions.md | Codacy code quality AI instructions |
 
 ## Conventions
 
