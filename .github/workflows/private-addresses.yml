@@ -1,0 +1,32 @@
+# private-addresses — no RFC 1918 address in any tracked file.
+#
+# This repository is public: a private address committed here names a host on
+# a private network and stays readable in history, forks and caches. The check
+# runs on every pull request and push to main, over all tracked files rather
+# than a few extensions. .github/scripts/check-private-addresses.sh says what it
+# matches and why there is no allowlist.
+name: private-addresses
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - name: Refuse RFC 1918 addresses in tracked files
+        run: bash .github/scripts/check-private-addresses.sh

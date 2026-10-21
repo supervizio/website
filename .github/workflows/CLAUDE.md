@@ -11,6 +11,7 @@ CI/CD automation for the devcontainer template.
 |------|-------------|
 | `docker-images.yml` | Build and push devcontainer images |
 | `release.yml` | Create GitHub Release with claude-assets.tar.gz |
+| `private-addresses.yml` | Fail if any tracked file holds an RFC 1918 address (`.github/scripts/check-private-addresses.sh`, no allowlist) |
 
 ## docker-images.yml
 
